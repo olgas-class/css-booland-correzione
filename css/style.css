@@ -1,94 +1,133 @@
+:root {
+  --header-height: 80px;
+}
+
 /* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
+}
+
+a {
+    color: inherit;
 }
 
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 /* COMMON */
 /* Layout */
 .container {
-    width: 70%;
-    max-width: 1100px;
-    margin: 0 auto;
+  width: 70%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: space-between; */
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 1rem;
 }
 
 .col {
-    width: calc(100% / 3 - 2rem / 3);
-    /* margin-bottom: 1rem; */
+  width: calc(100% / 3 - 2rem / 3);
+  /* margin-bottom: 1rem; */
 }
 
+/* HEADER  */
+header {
+  background-color: orangered;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  color: white;
+}
+
+header .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+}
+
+header .logo img {
+  height: 40px;
+}
+
+header ul {
+  display: flex;
+  list-style-type: none;
+  gap: .5rem;
+}
+
+
 /* MAIN */
+main {
+  padding-top: calc(var(--header-height) + 20px);
+}
 /* Card */
 .card-img img {
-    display: block;
+  display: block;
 }
 
 /* Approccio 1 - z-index */
 .card-img {
-    position: relative;
+  position: relative;
 }
 
 .back-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .card-img:hover .back-img {
-    z-index: 1;
+  z-index: 1;
 }
 
 .like {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    background-color: white;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: white;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .badges {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    z-index: 2;
-    color: white;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  z-index: 2;
+  color: white;
 }
 
 .badge {
-    padding: .3rem .8rem;
+  padding: 0.3rem 0.8rem;
 }
 
 .discount {
-    background-color: brown;
+  background-color: brown;
 }
 
 .tag {
-    background-color: green;
+  background-color: green;
 }
-
 
 /* Approccio 2 - display */
 /* .card-img .back-img {
